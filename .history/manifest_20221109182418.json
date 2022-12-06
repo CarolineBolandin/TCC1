@@ -1,0 +1,23 @@
+{
+   "manifest_version": 3,
+   "name": "Monochromatic support",
+   "version": "0.3",
+   "description": "TCC Caroline Cardoso",
+   "icons": {
+      "128": "img/favicon.png"
+   },
+   "content_scripts": [
+      {
+          "js": [
+              "scripts/html2canvas.min.js",
+              "scripts/content.js"
+          ],
+          "matches": [
+              "\u003Call_urls>"
+          ]
+      }
+  ],
+  "permissions": [
+    "declarativeContent"
+ ]
+}
