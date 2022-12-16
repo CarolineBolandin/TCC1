@@ -13,7 +13,9 @@
               "scripts/content.js"
           ],
           "matches": [
-              "\u003Call_urls>"
+              "<allurls>",
+              "urn:*"
+              
           ]
       }
   ],

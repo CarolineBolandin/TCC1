@@ -23,7 +23,7 @@ function init() {
         const mouseX = event.clientX;
 
         if (context) { // Só pegará os dados do canvas ao ser inicializado
-            let pixelData = context.getImageData(event.pageX, event.pageY, 1, 1).data; //Passa parte da imagem, onde o mouse esta localizado
+            let pixelData = context.getImageData(event.pageX, event.pageY, 0, 0).data; //Passa parte da imagem, onde o mouse esta localizado
             if (pixelData[0] == 0 && pixelData[1] == 0 && pixelData[2] == 0 && pixelData[3] == 0) { //cada indice representa valores do RGBa
                 console.log("Transparencia");
                 throw "Transparencia Detectada, não pode ser convertida para HEX" // 0 Red, 1 Green ,2 Blue, 3 Alpha Transparent

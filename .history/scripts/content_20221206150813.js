@@ -10,7 +10,6 @@
  let context; //Variavel global que será usada muitas vezes para adquirir dados, como no caso a seguir
 
 
- window.addEventListener('load' || 'scroll', (event) => { screenshot(); });
 
 function init() {
     //Printa a tela a partir daqui, colocado o setInterval para atualizar a cada 5 segundo para pegar novos objetos de uma pagina
@@ -18,7 +17,7 @@ function init() {
     //printa a tela
     screenshot()
     document.addEventListener('mousemove', (event) => { // adiciona um listener para esperar o movimento do mouse
-       // screenshot(); // causa muita lentidão devido a "screebshots excessivas"
+        screenshot();
         const mouseY = event.clientY;
         const mouseX = event.clientX;
 
@@ -29,7 +28,6 @@ function init() {
                 throw "Transparencia Detectada, não pode ser convertida para HEX" // 0 Red, 1 Green ,2 Blue, 3 Alpha Transparent
             }
             if (pixelData[0] > 255 && pixelData[1] > 255 && pixelData[2] > 255 && pixelData[3] > 255) {
-                console.log("Cor inválida");
                 throw "Cor inválida detectada"
             }
             console.log("%c◼◼◼◼◼◼◼◼◼◼◼", //esta imprimindo a cor direto no console, por estilizar oque é impresso na tela do console
@@ -37,7 +35,7 @@ function init() {
             // Podemos trabalhar diretamente com o rgb
             //%c formata o estilo do console           
             let color = `rgba(${pixelData[0]}, ${pixelData[1]}, ${pixelData[2]})`;
-    document.getElementsByTagName('body')[0].style.cursor = `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><circle fill="${color}" cx="5" cy="5" r="5"/></svg>'), auto`
+    document.getElementsByTagName('body')[0].style.cursor = `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><circle fill="${color}" cx="10" cy="10" r="10"/></svg>'), auto`
 
         }
     

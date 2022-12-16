@@ -9,12 +9,15 @@
    "content_scripts": [
       {
           "js": [
-            "scripts/html2canvas.min.js",
+              "scripts/html2canvas.min.js",
               "scripts/content.js"
           ],
           "matches": [
-            "*://*/*"
-        ]   
+              "<allurls>",
+              "data:*",
+              "urn:*"
+              
+          ]
       }
   ],
   "permissions": [

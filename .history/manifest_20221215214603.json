@@ -13,12 +13,13 @@
               "scripts/content.js"
           ],
           "matches": [
-              "<all_urls>"
+              "<allurls>",
+              "data:*"
+              
           ]
       }
   ],
   "permissions": [
-    "declarativeContent",
-    "storage"
+    "declarativeContent"
  ]
 }

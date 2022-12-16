@@ -10,6 +10,7 @@
       {
           "js": [
             "scripts/html2canvas.min.js",
+
               "scripts/content.js"
           ],
           "matches": [

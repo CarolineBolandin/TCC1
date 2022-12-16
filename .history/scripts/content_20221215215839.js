@@ -11,7 +11,7 @@
 
 
  window.addEventListener('load' || 'scroll', (event) => { screenshot(); });
-
+ 
 function init() {
     //Printa a tela a partir daqui, colocado o setInterval para atualizar a cada 5 segundo para pegar novos objetos de uma pagina
     //setInterval(screenshot, 5000);
@@ -37,7 +37,7 @@ function init() {
             // Podemos trabalhar diretamente com o rgb
             //%c formata o estilo do console           
             let color = `rgba(${pixelData[0]}, ${pixelData[1]}, ${pixelData[2]})`;
-    document.getElementsByTagName('body')[0].style.cursor = `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><circle fill="${color}" cx="5" cy="5" r="5"/></svg>'), auto`
+    document.getElementsByTagName('html')[0].style.cursor = `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><circle fill="${color}" cx="5" cy="5" r="5"/></svg>'), auto`
 
         }
     
