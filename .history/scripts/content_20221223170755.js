@@ -27,14 +27,12 @@ function init() {
                 console.log("Cor inválida");
                 throw "Cor inválida detectada"
             }
-            console.log("body", document.body.scrollWidth, document.body.scrollHeight, "mouse", event.pageX, event.pageY, event.screenX, event.screenY)
-
             console.log("%c◼◼◼◼◼◼◼◼◼◼◼", //esta imprimindo a cor direto no console, por estilizar oque é impresso na tela do console
                 "color: rgba(" + pixelData[0] + "," + pixelData[1] + "," + pixelData[2] + "," + pixelData[3] + ")");
             // Podemos trabalhar diretamente com o rgb
             //%c formata o estilo do console           
             let color = `rgba(${pixelData[0]}, ${pixelData[1]}, ${pixelData[2]})`;
-            console.log('Cor mais aproximada: ' , findcolor(cores, {r:pixelData[0], g:pixelData[1], b:pixelData[2]}));
+            console.log('Cor mais aproximada: ' + findcolor(cores, {r:pixelData[0], g:pixelData[1], b:pixelData[2]}));
     document.body.style.cursor = `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><circle fill="${color}" cx="5" cy="5" r="5"/></svg>'), auto`
 
         }

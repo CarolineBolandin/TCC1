@@ -27,8 +27,6 @@ function init() {
                 console.log("Cor inválida");
                 throw "Cor inválida detectada"
             }
-            console.log("body", document.body.scrollWidth, document.body.scrollHeight, "mouse", event.pageX, event.pageY, event.screenX, event.screenY)
-
             console.log("%c◼◼◼◼◼◼◼◼◼◼◼", //esta imprimindo a cor direto no console, por estilizar oque é impresso na tela do console
                 "color: rgba(" + pixelData[0] + "," + pixelData[1] + "," + pixelData[2] + "," + pixelData[3] + ")");
             // Podemos trabalhar diretamente com o rgb

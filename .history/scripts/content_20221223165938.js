@@ -8,8 +8,7 @@
  * Assim se fazendo necessário colocar uma sequência de intervalos, onde ele faz o screenshot novamente. (função setInterval)
  * **/
  let context; //Variavel global que será usada muitas vezes para adquirir dados, como no caso a seguir
- let canvas;
- 
+
 
  window.addEventListener('load' || 'scroll', (event) => { screenshot(); });
 
@@ -27,20 +26,17 @@ function init() {
                 console.log("Cor inválida");
                 throw "Cor inválida detectada"
             }
-            console.log("body", document.body.scrollWidth, document.body.scrollHeight, "mouse", event.pageX, event.pageY, event.screenX, event.screenY)
-
             console.log("%c◼◼◼◼◼◼◼◼◼◼◼", //esta imprimindo a cor direto no console, por estilizar oque é impresso na tela do console
                 "color: rgba(" + pixelData[0] + "," + pixelData[1] + "," + pixelData[2] + "," + pixelData[3] + ")");
             // Podemos trabalhar diretamente com o rgb
             //%c formata o estilo do console           
             let color = `rgba(${pixelData[0]}, ${pixelData[1]}, ${pixelData[2]})`;
-            console.log('Cor mais aproximada: ' , findcolor(cores, {r:pixelData[0], g:pixelData[1], b:pixelData[2]}));
+            console.log('Cor mais aproximada: ' + findcolor(cores, {r:pixelData[0], g:pixelData[1], b:pixelData[2]}));
     document.body.style.cursor = `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><circle fill="${color}" cx="5" cy="5" r="5"/></svg>'), auto`
 
         }
     
     });
-
     //atalhos do teclado 'u' tira screeshot e 's' abre o screenshot em uma nova aba
     document.addEventListener("keyup", (event) => {
         if (event.key == 's') {
@@ -52,13 +48,13 @@ function init() {
         }
     });
 }
-//html2canvas é uma função assincrona, executa oque precisa e executa algo em seguida, callback.
-//.then é o callback no caso.
+
 function screenshot() { 
     let region = document.body; // cria uma variavel região do Body
-    html2canvas(region).then(canvas_ => { //usa a variável regiao para pegar o tamanho da tela e criar o canvas
-        canvas = canvas_;
-        context = canvas.getContext('2d', { willReadFrequently: true });
+    html2canvas(region).then(canvas => { //usa a variável regiao para pegar o tamanho da tela e criar o canvas
+        context = canvas.getContext('2d', {
+            willReadFrequently : true
+        });
         console.log("screenshot")
     })
 }

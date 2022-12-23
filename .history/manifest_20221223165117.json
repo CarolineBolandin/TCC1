@@ -13,7 +13,7 @@
               "scripts/content.js"
           ],
           "matches": [
-            "<all_urls>"
+            "<allUrl>"
         ]   
       }
   ],
